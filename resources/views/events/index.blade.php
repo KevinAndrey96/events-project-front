@@ -41,14 +41,15 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                @if ($event['status'] != 'cancelled')
                                                 <div class="d-flex justify-content-center">
-                                                    <div class="d-inline">
+                                                    <div class="m-2">
                                                         <a style="color: darkred;" href="#" title="Cancelar" class="btn btn-link px-1 mb-0" onclick="sendForm('{{$event['pk']}}', '{{$event['sk']}}')"><i style="color: darkred; font-size: 25px !important;" class="material-icons opacity-10">block</i></a>
+                                                    </div>
+                                                    <div class="m-2">
+                                                        <a style="color: darkred;" href="#" title="Asistentes" class="btn btn-link px-1 mb-0"><i style="color: darkblue; font-size: 25px !important;" class="material-icons opacity-10">groups</i></a>
                                                     </div>
                                                 </div>
                                             </td>
-                                            @endif
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -67,12 +68,16 @@
     <script type="text/javascript">
         function sendForm(pk, sk)
         {
-            var form = document.getElementById('cancel-form');
-            var pkElement = document.getElementById('pk');
-            var skElement = document.getElementById('sk');
-            pkElement.value = pk;
-            skElement.value = sk;
-            form.submit();
+           var cancelConfirm = confirm("¿Está seguro que quiere cancelar este evento?");
+
+            if (cancelConfirm) {
+                var form = document.getElementById('cancel-form');
+                var pkElement = document.getElementById('pk');
+                var skElement = document.getElementById('sk');
+                pkElement.value = pk;
+                skElement.value = sk;
+                form.submit();
+            }
         }
     </script>
 @endsection
