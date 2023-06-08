@@ -43,13 +43,13 @@
                 <form method="POST" action="{{route('records.store')}}" >
                     @csrf
                     <div class="row row-space">
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <label class="label">Nombres</label>
                                 <input class="input--style-4" type="text" name="first_name">
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <label class="label">Apellidos</label>
                                 <input class="input--style-4" type="text" name="last_name">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="row row-space">
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <label class="label">Fecha de nacimiento</label>
                                 <div class="input-group-icon">
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <label class="label">Genero</label>
                                 <div class="p-t-10">
@@ -82,16 +82,22 @@
                         </div>
                     </div>
                     <div class="row row-space">
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <label class="label">Email</label>
                                 <input class="input--style-4" type="email" name="email">
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <label class="label">Teléfono</label>
                                 <input class="input--style-4" type="text" name="phone">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <label class="label">Escribe el correo de un amigo interesado en el evento</label>
+                                <input class="input--style-4" type="text" name="friend_email">
                             </div>
                         </div>
                     </div>
@@ -101,6 +107,8 @@
                             <button class="btn btn--radius-2 bg-primary bg-gradient text-light" type="submit">Enviar</button>
                         </div>
                     </div>
+
+
                 </form>
             </div>
         </div>
