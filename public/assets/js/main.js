@@ -5,7 +5,7 @@ for(var i = 0; i < sidebarItems.length; i++) {
     let sidebarItem = sidebarItems[i];
 	sidebarItems[i].querySelector('.sidebar-link').addEventListener('click', function(e) {
         e.preventDefault();
-        
+
         let submenu = sidebarItem.querySelector('.submenu');
         if( submenu.classList.contains('active') ) submenu.style.display = "block"
 
@@ -48,4 +48,8 @@ if(typeof PerfectScrollbar == 'function') {
 }
 
 // Scroll into active sidebar
-document.querySelector('.sidebar-item.active').scrollIntoView(false)
+const elements = document.querySelector('.sidebar-item.active');
+if (elements) {
+    elements.scrollIntoView();
+}
+//document.querySelector('.sidebar-item.active').scrollIntoView(false)

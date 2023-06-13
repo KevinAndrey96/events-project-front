@@ -17,7 +17,6 @@ class StoreRecordsController extends Controller
 {
     public function __invoke(Request $request)
     {
-        //return $request;
         $data = [
             "pk" => "User#".Uuid::generate(),
             "sk" => "METADATA#USER",
@@ -44,7 +43,7 @@ class StoreRecordsController extends Controller
 
         $pk = $data['pk'];
         $path = 'PDF/QR/'.$pk.'.pdf';
-        $qrCode = QrCode::format('png')->size(200)->generate($pk);
+        $qrCode = QrCode::format('png')->size(300)->generate($pk);
         $qrCode = base64_encode($qrCode);
         $pdf = Pdf::loadview('users.documentQR', compact('qrCode'));
 
@@ -65,15 +64,9 @@ class StoreRecordsController extends Controller
                 $mail->subject($subject);
             });
         }
-
         //Storage::disk('public')->put($path, $pdf->output());
-
         //Mail::to($data['email'])->send(new QRMail($subject, $text, $pk));
-
-
-
         //$qrCodePath = 'qrcodes/qrcode.png';
-
 
         return redirect()->route('records.events')->with('recordRegistered', 'Ha sido registrado al evento');
 
