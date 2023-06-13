@@ -6,3 +6,6 @@ fix: optimize in cpanel
 
 ## [Hotfix 1.0.3]
 fix: add polyfill-iconv
+
+## [Hotfix 1.0.4]
+fix: change selected camera in instascan

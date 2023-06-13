@@ -35,6 +35,23 @@
             qrForm.submit();
         });
 
+        Instascan.Camera.getCameras().then(function (cameras) {
+            if (cameras.length > 0) {
+                let selectedCamera = cameras[0];
+                for (let i = 0; i < cameras.length; i++) {
+                    if (cameras[i].name.indexOf('back') !== -1) {
+                        selectedCamera = cameras[i];
+                        break;
+                    }
+                }
+                scanner.start(selectedCamera);
+            } else {
+                console.error('No cameras found.');
+            }
+        }).catch(function (e) {
+            console.error(e);
+        });
+        /*
         Instascan.Camera.getCameras()
             .then(cameras => {
                 if (cameras.length > 0) {
@@ -47,7 +64,7 @@
             .catch(err => {
                 console.error(err);
             });
-
+*/
 
     </script>
 @endsection
