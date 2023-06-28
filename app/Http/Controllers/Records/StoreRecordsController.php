@@ -27,7 +27,7 @@ class StoreRecordsController extends Controller
             "email" => strval($request->input('email')),
             "phone" => strval($request->input('phone')),
             "date" => strval($request->input('date')),
-            "status" => 'attends'
+            "status" => 'not-attend'
         ];
         json_encode($data);
 
@@ -39,7 +39,7 @@ class StoreRecordsController extends Controller
         ]);
 
         $subject = 'Código de acceso para evento';
-        $text = 'Hola, con este código QR podras acceder al evento.';
+        $text = 'Buenos días.<br>Con este correo se ha adjuntado un código QR que le permitirá acceder al evento seleccionado.<br>Gracias por usar nuestros servicios.';
 
         $pk = $data['pk'];
         $path = 'PDF/QR/'.$pk.'.pdf';

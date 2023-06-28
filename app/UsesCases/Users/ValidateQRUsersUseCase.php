@@ -14,18 +14,18 @@ class ValidateQRUsersUseCase implements ValidateQRUsersUseCaseInterface
         $this->eventRepository = $eventRepository;
     }
 
-    public function handle(string $qrMessage):bool
+    public function handle(string $qrMessage)
     {
         $users = $this->eventRepository->getAll('USER');
-        $validatedQR = false;
+        $validatedUser = null;
 
         foreach ($users as $user) {
             if ($user['pk'] == $qrMessage) {
-                $validatedQR = true;
+                $validatedUser = $user;
                 break;
             }
         }
 
-        return $validatedQR;
+        return $validatedUser;
     }
 }

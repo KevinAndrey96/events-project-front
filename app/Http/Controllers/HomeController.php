@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->role == 'Administrator') {
+            return redirect()->route('events.index');
+        }
+
+        if (Auth::user()->role == 'Assistant') {
+            return redirect()->route('scanner.show');
+        }
+
         return view('home');
     }
 }

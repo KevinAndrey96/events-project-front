@@ -4,6 +4,7 @@ namespace App\Repositories\Users;
 
 use App\Models\User;
 use App\Repositories\Contracts\Users\UserRepositoryInterface;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Hash;
 
 class UserRepository implements UserRepositoryInterface
@@ -21,5 +22,11 @@ class UserRepository implements UserRepositoryInterface
         $user->role = $role;
         $user->password = Hash::make($password);
         $user->save();
+    }
+
+    public function changeStatus(string $pk):bool
+    {
+        $client = new Client();
+        
     }
 }

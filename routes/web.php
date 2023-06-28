@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -26,7 +26,9 @@ Route::group(['middleware' => ['auth']], static function() {
     Route::get('/events', App\Http\Controllers\Events\IndexEventsController::class)->name('events.index');
     Route::get('/events-create', App\Http\Controllers\Events\CreateEventsController::class)->name('events.create');
     Route::post('/events-store', App\Http\Controllers\Events\StoreEventsController::class)->name('events.store');
-    Route::post('/events-cancel', App\Http\Controllers\Events\CancelEventsController::class)->name('events.cancel');
+    Route::post('/events-cancel', App\Http\Controllers\Events\ChangeStatusEventsController::class)->name('events.cancel');
+    Route::get('/events-attendees/{id}', App\Http\Controllers\Events\AttendeesEventsController::class)->name('events.attendees');
+
 
     //Routes for users
     Route::get('/users-create/{role}', App\Http\Controllers\Users\CreateUsersController::class)->name('users.create');
@@ -36,8 +38,6 @@ Route::group(['middleware' => ['auth']], static function() {
 
     //Routes for scanner
     Route::get('/scanner-show', App\Http\Controllers\Scanner\ShowScannerController::class)->name('scanner.show');
-
-
 });
 
 //Routes for users

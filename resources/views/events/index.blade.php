@@ -46,7 +46,7 @@
                                                         <a style="color: darkred;" href="#" title="Cancelar" class="btn btn-link px-1 mb-0" onclick="sendForm('{{$event['pk']}}', '{{$event['sk']}}')"><i style="color: darkred; font-size: 25px !important;" class="material-icons opacity-10">block</i></a>
                                                     </div>
                                                     <div class="m-2">
-                                                        <a style="color: darkred;" href="#" title="Asistentes" class="btn btn-link px-1 mb-0"><i style="color: darkblue; font-size: 25px !important;" class="material-icons opacity-10">groups</i></a>
+                                                        <a style="color: darkred;" href="{{route('events.attendees', ['id' => substr($event['pk'], 6)])}}" title="Asistentes" class="btn btn-link px-1 mb-0"><i style="color: darkblue; font-size: 25px !important;" class="material-icons opacity-10">groups</i></a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -58,6 +58,7 @@
                                 @csrf
                                 <input type="hidden" name="pk" id="pk">
                                 <input type="hidden" name="sk" id="sk">
+                                <input type="hidden" name="status" id="status" value="cancelled">
                             </form>
                         </div>
                     </div>

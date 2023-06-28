@@ -3,10 +3,12 @@
 namespace App\Providers;
 
 use App\UsesCases\Contracts\Events\GetAllEventsUseCaseInterface;
+use App\UsesCases\Contracts\Users\ChangeStatusUsersUseCaseInterface;
 use App\UsesCases\Contracts\Users\IndexUsersUseCaseInterface;
 use App\UsesCases\Contracts\Users\StoreUsersUseCaseInterface;
 use App\UsesCases\Contracts\Users\ValidateQRUsersUseCaseInterface;
 use App\UsesCases\Events\GetAllEventsUseCase;
+use App\UsesCases\Users\ChangeStatusUsersUseCase;
 use App\UsesCases\Users\IndexUsersUseCase;
 use App\UsesCases\Users\StoreUsersUseCase;
 use App\UsesCases\Users\ValidateQRUsersUseCase;
@@ -23,7 +25,8 @@ class UseCaseServiceProvider extends ServiceProvider
         IndexUsersUseCaseInterface::class => IndexUsersUseCase::class,
         StoreUsersUseCaseInterface::class => StoreUsersUseCase::class,
         GetAllEventsUseCaseInterface::class => GetAllEventsUseCase::class,
-        ValidateQRUsersUseCaseInterface::class => ValidateQRUsersUseCase::class
+        ValidateQRUsersUseCaseInterface::class => ValidateQRUsersUseCase::class,
+        ChangeStatusUsersUseCaseInterface::class => ChangeStatusUsersUseCase::class
     ];
 
     public function register()

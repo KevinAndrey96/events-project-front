@@ -15,8 +15,8 @@
                         </div>
                     </div>
                     <div class="card-body px-0 pb-2">
-                        @if ($validationQR)
-                            <p style="font-size: 300%; font-weight: bold;" class="text-success text-center">Registrado al evento</p>
+                        @if (isset($user))
+                            <p style="font-size: 300%; font-weight: bold;" class="text-success text-center">Usuario validado</p>
                         @else
                             <p style="font-size: 300%; font-weight: bold;" class="text-danger text-center">No se encontro registro</p>
                         @endif
