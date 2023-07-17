@@ -9,3 +9,6 @@ fix: add polyfill-iconv
 
 ## [Hotfix 1.0.4]
 fix: change selected camera in instascan
+
+## [Hotfix 1.0.5]
+fix: delete mazer image
