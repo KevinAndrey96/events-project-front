@@ -18,15 +18,10 @@ class ChangeStatusEventsController extends Controller
 
     public function __invoke(Request $request)
     {
-
         $this->eventRepository->changeStatus(
             $request->input('pk'),
             $request->input('sk'),
             $request->input('status'));
-
-
-
-
 
         return back();
     }

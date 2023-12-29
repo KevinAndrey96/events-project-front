@@ -29,18 +29,6 @@
                                     <tr class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
-                                        <!--
-                                        <td>
-                                            <div class="d-flex justify-content-center">
-                                                <div class="m-2">
-                                                    <a style="color: darkred;" href="#" title="Cancelar" class="btn btn-link px-1 mb-0"><i style="color: darkgreen; font-size: 25px !important;" class="material-icons opacity-10">edit</i></a>
-                                                </div>
-                                                <div class="m-2">
-                                                    <a style="color: darkred;" href="#" title="Asistentes" class="btn btn-link px-1 mb-0"><i style="color: darkblue; font-size: 25px !important;" class="material-icons opacity-10">groups</i></a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        -->
                                     </tr>
                                 @endforeach
                                 </tbody>

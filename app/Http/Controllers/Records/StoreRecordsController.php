@@ -53,7 +53,6 @@ class StoreRecordsController extends Controller
             $mail->attachData($pdf->output(), 'QR.pdf');
         });
 
-
         if (isset($request->friend_email)) {
             $text = 'Un amigo te ha referenciado para que puedas ir a un evento,
             puedes registrarte dando click en el siguiente link: https://events.instanceshape.com/records-create/'.strval($request->input('event_pk'));

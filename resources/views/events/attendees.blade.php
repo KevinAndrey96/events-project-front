@@ -1,6 +1,5 @@
 @extends('layouts.dashboard')
 @section('content')
-
     @if(Session::has('eventRegistered'))
         <div class="alert alert-success" role="alert">
             <p class="text-center text-white">{{ Session::get('eventRegistered') }}</p>
@@ -22,8 +21,8 @@
                                 <tr>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Teléfono</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Edad</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estatus</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha de nacimiento</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -34,9 +33,9 @@
                                         <td>{{$attendee['date']}}</td>
                                         <td>
                                             @if ($attendee['status'] == 'attend')
-                                                <p style="font-weight:bold;" class="text-success">Asistio</p>
+                                                <p style="font-weight:bold;" class="text-success">Asistió</p>
                                             @elseif ($attendee['status'] == 'not-attend')
-                                                <p style="font-weight:bold;" class="text-danger">No Asistio</p>
+                                                <p style="font-weight:bold;" class="text-danger">No Asistió</p>
                                             @endif
                                         </td>
                                     </tr>

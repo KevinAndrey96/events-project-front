@@ -12,3 +12,6 @@ fix: change selected camera in instascan
 
 ## [Hotfix 1.0.5]
 fix: delete mazer image
+
+## [Hotfix 1.0.6]
+fix: add styles in reset password view
