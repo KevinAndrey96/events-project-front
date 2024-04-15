@@ -44,7 +44,7 @@
                     @foreach ($events as $event)
                         @if ($event['status'] !== 'cancelled')
                             <div class="col-6 p-2 d-flex justify-content-center">
-                                <a href="{{route('records.create', ['pk' => substr($event['pk'], 6)])}}">{{$event['name']}}</a>
+                                <a href="{{route('records.create', ['pk' => substr($event['pk'], 6)])}}">{{$event['name'].' '}}(Banco: {{$event['bank']}} - Cuenta: {{$event['account']}})</a>
                             </div>
                         @endif
                     @endforeach

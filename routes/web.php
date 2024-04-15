@@ -38,6 +38,11 @@ Route::group(['middleware' => ['auth']], static function() {
 
     //Routes for scanner
     Route::get('/scanner-show', App\Http\Controllers\Scanner\ShowScannerController::class)->name('scanner.show');
+
+    //Routes for Attendees
+    Route::post('/attendee-change-pay-status', App\Http\Controllers\Attendee\ChangePayStatusController::class)->name('attendee.change-pay-status');
+
+
 });
 
 //Routes for users

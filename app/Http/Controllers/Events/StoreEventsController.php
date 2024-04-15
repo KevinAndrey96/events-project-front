@@ -11,13 +11,16 @@ class StoreEventsController extends Controller
     public function __invoke(Request $request)
     {
         $data = [
-            "pk" => "Event#".Uuid::generate(),
+            "pk" => "Event#".substr(''.Uuid::generate(), 0, 6),
             "sk" => "METADATA#EVENT",
             "capacity" => strval($request->input('capacity')),
             "date" => strval($request->input('date')),
             "hour" => strval($request->input('hour')),
             "name" => strval($request->input('name')),
-            "status" => 'enabled'
+            "price" => strval($request->input('price')),
+            "status" => 'enabled',
+            "bank" => strval($request->input('bank')),
+            "account" => strval($request->input('account'))
         ];
 
         json_encode($data);

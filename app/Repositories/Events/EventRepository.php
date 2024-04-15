@@ -42,4 +42,22 @@ class EventRepository implements EventRepositoryInterface
 
         return json_decode($response->getBody(), true);
     }
+
+    public function changePayStatus($pk, $sk, $status)
+    {
+        $data = [
+            'pk' => $pk,
+            'sk' => $sk,
+            'status' => $status
+        ];
+
+        json_encode($data);
+
+        $client = new Client();
+        $client->post(strval(getenv('URL_CHANGE_PAY_STATUS')), [
+            'json' => $data
+        ]);
+
+        return true;
+    }
 }

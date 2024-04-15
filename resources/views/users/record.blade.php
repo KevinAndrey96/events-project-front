@@ -40,7 +40,7 @@
                         <h2 class="title">Formulario de registro</h2>
                     </div>
                 </div>
-                <form method="POST" action="{{route('records.store')}}" >
+                <form method="POST" action="{{route('records.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="row row-space">
                         <div class="col-md-6">
@@ -81,7 +81,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row row-space">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div class="p-t-10">
+                                <label class="radio-container m-r-45">Becado
+                                    <input type="radio" checked="checked" id="scholarshipYes" name="scholarship" value="yes" onchange="showFileInput()">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">No Becado
+                                    <input type="radio" name="scholarship" id="scholarshipNot" value="no" onchange="showFileInput()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 ms-auto me-auto mb-4" id="receiptFileDiv" style="display:none">
+                            <label for="formFile" class="form-label">Suba el recibo de pago</label>
+                            <input class="form-control" type="file" name="receiptFile" id="receiptFile" required disabled>
+                    </div>
+                    <div class="row row-space mt-4">
                         <div class="col-md-6">
                             <div class="input-group">
                                 <label class="label">Email</label>
@@ -113,6 +131,26 @@
             </div>
         </div>
     </div>
+<script>
+    function showFileInput()
+    {
+        let receiptFileDiv = document.getElementById('receiptFileDiv');
+        let receiptFile = document.getElementById('receiptFile');
+        let scholarshipYes = document.getElementById('scholarshipYes');
+        let scholarshipNo = document.getElementById('scholarshipNot');
+
+        receiptFileDiv.style.display = 'block';
+        receiptFile.disabled = false;
+
+        if (scholarshipYes.checked == true) {
+            receiptFileDiv.style.display = 'none';
+            receiptFile.disabled = true;
+
+        }
+    }
+
+</script>
+
 </div>
 
 <!-- Jquery JS-->

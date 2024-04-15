@@ -26,6 +26,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
 
+    <!--JQuery-->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+
+
 
 </head>
 
@@ -192,6 +199,7 @@
 <script src="/assets/js/pages/dashboard.js"></script>
 
 <script src="/assets/js/main.js"></script>
+
 </body>
 
 </html>

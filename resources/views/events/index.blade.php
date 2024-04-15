@@ -23,6 +23,9 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Capacidad</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Precio</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Banco</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cuenta</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Acción</th>
                                 </tr>
@@ -33,6 +36,9 @@
                                             <td>{{$event['name']}}</td>
                                             <td>{{$event['date'].' '.$event['hour']}}</td>
                                             <td>{{$event['capacity'].' personas'}}</td>
+                                            <td>${{$event['price']}}</td>
+                                            <td>{{$event['bank']}}</td>
+                                            <td>{{$event['account']}}</td>
                                             <td>
                                                 @if ($event['status'] == 'enabled')
                                                     <p style="font-weight:bold;" class="text-success">Habilitado</p>

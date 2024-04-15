@@ -17,9 +17,10 @@ class IndexEventsController extends Controller
         $this->eventRepository = $eventRepository;
     }
 
-    public function __invoke(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function __invoke()
     {
         $events = $this->eventRepository->getAll('EVENT');
+        //return $events;
 
         return view('events.index', ['events' => $events]);
     }

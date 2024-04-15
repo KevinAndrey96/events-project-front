@@ -30,6 +30,18 @@
                                         <label for="time" class="form-label">Hora</label>
                                         <input id="time" name="hour" type="time" class="form-control" required>
                                     </div>
+                                    <div class="col-md-4 mt-3 mb-3">
+                                        <label for="price" class="form-label">Precio</label>
+                                        <input id="time" name="price" type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4 mt-3 mb-3">
+                                        <label for="bank" class="form-label">Banco</label>
+                                        <input id="time" name="bank" type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-4 mt-3 mb-3">
+                                        <label for="account" class="form-label">Cuenta</label>
+                                        <input id="time" name="account" type="text" class="form-control" required>
+                                    </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <input type="submit" class="btn btn-success bg-gradient m-4 float-end pe-4 ps-4" value="Crear">
