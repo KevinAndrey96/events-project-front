@@ -55,6 +55,7 @@ class EventRepository implements EventRepositoryInterface
 
         $client = new Client();
         $client->post(strval(getenv('URL_CHANGE_PAY_STATUS')), [
+            'timeout' => 100000,
             'json' => $data
         ]);
 

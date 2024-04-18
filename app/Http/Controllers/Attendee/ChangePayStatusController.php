@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Attendee;
 use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\Events\EventRepositoryInterface;
 use App\UsesCases\Contracts\Users\ValidateQRUsersUseCaseInterface;
+use Exception;
+use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Request;
 
 class ChangePayStatusController extends Controller
@@ -18,8 +20,11 @@ class ChangePayStatusController extends Controller
 
     public function __invoke(Request $request)
     {
-        $this->eventRepository->changePayStatus($request->pk, $request->sk, $request->isPayed);
-
-        return back();
+        try {
+            $this->eventRepository->changePayStatus($request->pk, $request->sk, $request->isPayed);
+            return back();
+        } catch (exception $e) {
+            return 'Se ha encontrado la siguiente excepción: '.$e;
+        }
     }
 }
